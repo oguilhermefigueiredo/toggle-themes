@@ -1,5 +1,5 @@
 body {
-  --icon-color: slateblue;
+  --icon-color: mediumturquoise;
   --bg-color: white;
   --txt-color: black;
   --btn-txt-color: var(--bg-color);
@@ -13,6 +13,8 @@ body {
   margin: 0;
   background: var(--bg-color);
   color: var(--txt-color);
+  transition: var(--transition-delay);
+  overflow: hidden;
 }
 
 body.dark {
@@ -44,4 +46,51 @@ h1 {
 .toggle-btn:hover,
 .toggle-btn:focus {
   transform: scale(1.1)
+}
+
+.icon-btn {
+  margin-right: .5em;
+}
+
+.themes-container {
+  --rotation: 0;
+
+  position: absolute;
+  top: 0;
+  height: 200vmin;
+  pointer-events: none;
+  transform: rotate(calc(var(--rotation) * 1deg));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-delay);
+}
+
+
+.icon-sun,
+.icon-moon{
+  position: absolute;
+  transition: opacity, fill, var(--transition-delay);
+  width: 50px;
+  height: 50px;
+  fill: var(--icon-color);
+}
+
+.icon-sun {
+  top: 5%;
+  opacity: 1;
+}
+
+.dark .icon-sun {
+  opacity: 0;
+}
+
+.icon-moon {
+  bottom: 5%;
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.dark .icon-moon {
+  opacity: 1;
 }
