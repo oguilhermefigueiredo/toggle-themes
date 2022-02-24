@@ -32,4 +32,16 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: .5em 1em;
+  outline: none;
+  transition: var(--transition-delay);
+  transition: scale(1);
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+  transform: scale(1.1)
 }
